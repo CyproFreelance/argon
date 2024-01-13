@@ -717,6 +717,7 @@ strong.product-name {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 9px;
 }
 em.stocks {
   color: white;

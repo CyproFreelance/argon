@@ -10,7 +10,7 @@ const wishlistDetails = [];
 const productDetails = [
   {
     name: "Fortnite Public",
-    price: 95.99,
+    price: 6.99,
     imageUrl: "/assets/imgs/box.png",
     qty: 10,
     heading: "Fortnite Public External",
@@ -20,7 +20,7 @@ const productDetails = [
   },
   {
     name: "Perm Spoofer",
-    price: 44.99,
+    price: 4.99,
     imageUrl: "/assets/imgs/spoofer.png",
     qty: 15,
     heading: "Perm Spoofer",
@@ -112,6 +112,7 @@ function Wishlist() {
     </div>
     `;
   }
+
 
 
   function openModal(productName, imageUrl) {

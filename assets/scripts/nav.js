@@ -16,6 +16,10 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
+const shopda = document.querySelector('.shopbtn');
+shopda.addEventListener('click', function(e){
+  window.location.href = "/products.html"
+})
 
 document.addEventListener("DOMContentLoaded", function () {
     // Show loading animation when the page starts loading
