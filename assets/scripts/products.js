@@ -10,7 +10,7 @@ const wishlistDetails = [];
 const productDetails = [
   {
     name: "Fortnite Public",
-    price: 60,
+    price: 95.99,
     imageUrl: "/assets/imgs/box.png",
     qty: 10,
     heading: "Fortnite Public External",
@@ -20,7 +20,7 @@ const productDetails = [
   },
   {
     name: "Perm Spoofer",
-    price: 100,
+    price: 44.99,
     imageUrl: "/assets/imgs/spoofer.png",
     qty: 15,
     heading: "Perm Spoofer",
@@ -107,81 +107,130 @@ function Wishlist() {
   
   function AddBtn(product) {
     return `
-        <div>
-            <button class='add-btn' onclick="openModal('${product.name}', '${product.imageUrl}')">Buy<i class="fa-solid fa-plus"></i></button>
-        </div>
+    <div>
+    <button class='add-btn' onclick="openModal('${product.name}', '${product.imageUrl}')">Buy<i class="fa-solid fa-plus"></i></button>
+    </div>
     `;
-}
+  }
 
 
-function openModal(productName, imageUrl) {
-  // Set up your modal content here
-  const modalContent = `
-      <img src="${imageUrl}" id="modalProductImage" alt="" class="modal-image">
-      <h2 id="modalProductName" class="modal-title">${productName}</h2>
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <div class="modal-duration">
-      ${productName === 'Fortnite Public' ? `<button data-duration="1-day" onclick="selectDuration('Fortnite Public', '1-day');" class="modal-button">1 Day</button>` : ''}
-      ${productName === 'Fortnite Public' ? `<button data-duration="1-week" onclick="selectDuration('Fortnite Public', '1-week');" class="modal-button">1 Week</button>`: ''}
-      ${productName === 'Fortnite Public' ? `<button data-duration="1-month" onclick="selectDuration('Fortnite Public', '1-month');" class="modal-button">1 Month</button>` : ''}
-      ${productName === 'Fortnite Public' ? `<button data-duration="lifetime" onclick="selectDuration('Fortnite Public', 'lifetime');" class="modal-button">Lifetime</button>` : ''}
-      ${productName === 'Perm Spoofer' ? `<button data-duration="one-time" onclick="selectDuration('Perm Spoofer', 'one-time');" class="modal-button">One Time</button>` : ''}
-      ${productName === 'Perm Spoofer' ? `<button data-duration="lifetime" onclick="selectDuration('Perm Spoofer', 'lifetime');" class="modal-button">Lifetime</button>` : ''}
-      
-      </div>
-      <button id="purchaseBtn" data-sellix-product="" class="modal-button" disabled>Purchase</button>
-  `;
-
-  document.getElementById('productModal').innerHTML = modalContent;
-  document.getElementById('productModal').style.display = 'block';
-}
-
-
-
-// updateModalButtons();
+  function openModal(productName, imageUrl) {
+    const modalContent = `
+        <img src="${imageUrl}" id="modalProductImage" alt="" class="modal-image">
+        <h2 id="modalProductName" class="modal-title">${productName}</h2>
+        <h3 id="modalProductPrice" class="modal-price"></h3>
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-duration">
+        ${productName === 'Fortnite Public' ? `<button data-duration="1-day" onclick="selectDuration('Fortnite Public', '1-day');" class="modal-button">1 Day</button>` : ''}
+        ${productName === 'Fortnite Public' ? `<button data-duration="1-week" onclick="selectDuration('Fortnite Public', '1-week');" class="modal-button">1 Week</button>`: ''}
+        ${productName === 'Fortnite Public' ? `<button data-duration="1-month" onclick="selectDuration('Fortnite Public', '1-month');" class="modal-button">1 Month</button>` : ''}
+        ${productName === 'Fortnite Public' ? `<button data-duration="lifetime" onclick="selectDuration('Fortnite Public', 'lifetime');" class="modal-button">Lifetime</button>` : ''}
+        ${productName === 'Perm Spoofer' ? `<button data-duration="one-day" onclick="selectDuration('Perm Spoofer', 'one-day');" class="modal-button">1 Day</button>` : ''}
+        ${productName === 'Perm Spoofer' ? `<button data-duration="one-week" onclick="selectDuration('Perm Spoofer', 'one-week');" class="modal-button">1 Week</button>` : ''}
+        ${productName === 'Perm Spoofer' ? `<button data-duration="lifetime" onclick="selectDuration('Perm Spoofer', 'lifetime');" class="modal-button">Lifetime</button>` : ''}
+        
+        </div>
+        <button id="purchaseBtn" class="modal-button" disabled>Purchase</button>
+    `;
+  
+    const blurContainer = document.querySelector('.blur-container');
+    blurContainer.style.zIndex = '1'; // Add blur effect
+  
+    document.getElementById('productModal').innerHTML = modalContent;
+    document.getElementById('productModal').style.display = 'block';
+  
+    const purchaseBtn = document.getElementById('purchaseBtn');
+    purchaseBtn.addEventListener('click', () => purchaseProduct(productName));
+  }
+  
+  function selectDuration(productName, duration) {
+    const durationButtons = document.querySelectorAll('.modal-duration .modal-button');
+    durationButtons.forEach(button => button.classList.remove('active'));
+    const selectedButton = document.querySelector(`.modal-duration button[data-duration="${duration}"]`);
+    selectedButton.classList.add('active');
+  
+    // const purchaseBtn = document.getElementById('purchaseBtn');
+    // const sellixProductId = selectedButton.getAttribute('data-sellix-product');
+    // purchaseBtn.setAttribute('data-sellix-product', sellixProductId);
+    purchaseBtn.removeAttribute('disabled');
+  
+    updatePriceDisplay(productName, duration);
+  }
+  
+  function updatePriceDisplay(productName, duration) {
+    const prices = {
+      'Fortnite Public': {
+        '1-day': '€ 6.99',
+        '1-week': '€ 13.99',
+        '1-month': '€ 34.99',
+        'lifetime': '€ 95.99'
+      },
+      'Perm Spoofer': {
+        'one-day': '€ 4.99',
+        'one-week': '€ 11.99',
+        'lifetime': '€ 44.99'
+      }
+    };
+  
+    const priceDisplay = prices[productName]?.[duration];
+    if (priceDisplay) {
+      document.getElementById('modalProductPrice').innerText = `${priceDisplay}`;
+    } else {
+      console.error('Invalid product or duration for price display.');
+    }
+  }
+  
 
 function purchaseProduct(productName) {
   const selectedDuration = document.querySelector('.modal-duration .active');
-  const sellixProductId = selectedDuration ? selectedDuration.getAttribute('data-sellix-product') : '';
+  const duration = selectedDuration ? selectedDuration.getAttribute('data-duration') : '';
+  const productLink = generateProductLink(productName, duration);
 
-  if (sellixProductId) {
-      console.log(`Product ${productName} purchased with Sellix Product ID: ${sellixProductId}`);
-      closeModal();
+  if (productLink) {
+    console.log(`Redirecting to: ${productLink}`);
+    window.location.href = productLink;
   } else {
-      console.error('Please select a time period.');
+    console.error('Invalid product or duration.');
   }
+  closeModal();
 }
 
-function selectDuration(productName, duration) {
+function generateProductLink(productName, duration) {
+  const productIdMap = {
+    'Fortnite Public': {
+      '1-day': '6591882d8dad8',
+      '1-week': '65918bd3df14d',
+      '1-month': '65918bd62acfe',
+      'lifetime': '65918bd89eed0'
+    },
+    'Perm Spoofer': {
+      'one-day': 'temp-perm-spoofer-1-day',
+      'one-week': 'temp-perm-spoofer-week',
+      'lifetime': 'temp-perm-spoofer-lifetime'
+    }
+  };
 
-  const durationButtons = document.querySelectorAll('.modal-duration .modal-button');
-  durationButtons.forEach(button => button.classList.remove('active'));
-  const selectedButton = document.querySelector(`.modal-duration button[data-duration="${duration}"]`);
-  selectedButton.classList.add('active');
-
-  const purchaseBtn = document.getElementById('purchaseBtn');
-  const sellixProductId = selectedButton.getAttribute('data-sellix-product');
-  purchaseBtn.setAttribute('data-sellix-product', sellixProductId);
-  purchaseBtn.removeAttribute('disabled');
-
-
-  var productid = '';
-  if (productName === 'Fortnite Public') {
-    if (duration === '1-day') productid = '6591882d8dad8';
-    if (duration === '1-week') productid = '65918bd3df14d';
-    if (duration === '1-month') productid = '65918bd62acfe';
-    if (duration === 'lifetime') productid = '65918bd89eed0';
-  } else if (productName === 'Perm Spoofer') {
-    if (duration === 'one-time') productid = '65918ea95d047';
-    if (duration === 'lifetime') productid = '65918eb1acae8';
+  const productId = productIdMap[productName]?.[duration];
+  if (productId) {
+    return `https://argonsoftwaree.mysellix.io/product/${productId}`;
   }
-  
-  console.log(productid);
-  document.getElementById('purchaseBtn').setAttribute('data-sellix-product', productid);
+
 }
+
 
 function closeModal() {
-    document.getElementById('productModal').style.display = 'none';
+  const blurContainer = document.querySelector('.blur-container');
+  blurContainer.style.zIndex = '0'; // Remove blur effect
+
+  document.getElementById('productModal').style.display = 'none';
+}
+
+
+function closeModal() {
+  const blurContainer = document.querySelector('.blur-container');
+  blurContainer.style.zIndex = '-1'; // Remove blur effect
+
+  document.getElementById('productModal').style.display = 'none';
 }
 
 const navbar = document.getElementById("navbar");

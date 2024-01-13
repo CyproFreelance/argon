@@ -543,8 +543,8 @@ body.sidebar-open .sidebar {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%; /* Adjust the width as needed */
-  max-width: 600px; /* Add max-width for responsiveness */
+  width: 80%;
+  max-width: 600px;
   background-color: #1c1c1c;
   border: 2px solid #51018f;
   border-radius: 10px;
@@ -560,18 +560,19 @@ body.sidebar-open .sidebar {
   color: #fff;
 }
 
-.close-btn:hover{
+.close-btn:hover {
   animation: rotate .3s ease;
 }
 
 @keyframes rotate {
   to {
-    rotate: 360deg;
+    transform: rotate(360deg);
   }
   from {
-    rotate: 0;
+    transform: rotate(0);
   }
 }
+
 .modal-content {
   text-align: center;
   padding: 20px;
@@ -581,15 +582,25 @@ body.sidebar-open .sidebar {
 }
 
 .modal-image {
-  width: 100%;
+  width: fit-content;
   max-height: 300px;
   object-fit: cover;
   background-position: center;
-  margin: 20px 0; /* Add margin for spacing */
+  margin: 20px 0;
   border-radius: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.modal-title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modal-price{
+  text-align: center;
+  color: #969696;
 }
 
 .modal-duration {
@@ -599,7 +610,7 @@ body.sidebar-open .sidebar {
 }
 
 .modal-button {
-  margin: 10px; /* Add spacing between buttons */
+  margin: 10px;
   padding: 0.5em 1em;
   background-color: #6665dd;
   color: #fff;
@@ -617,6 +628,10 @@ body.sidebar-open .sidebar {
   background-color: #4CAF50;
 }
 
+#purchaseBtn {
+  display: block;
+  margin: 14px auto; /* Center the Purchase button */
+}
 
 .card {
   display: flex;
