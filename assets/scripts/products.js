@@ -14,9 +14,9 @@ const productDetails = [
     imageUrl: "/assets/imgs/box.png",
     qty: 10,
     heading: "Fortnite Public External",
-    link: "", // this is no need tho
-    des:
-      "Argon has remained undetected as an External Cheat for both professionals and amateurs since its release. During this time, users have been able to confidently participate in tournaments and Unreal lobbies with ease."
+    link: "",
+    des: "Argon has remained undetected as an External Cheat for both professionals and amateurs since its release. During this time, users have been able to confidently participate in tournaments and Unreal lobbies with ease.",
+    status: "In Development" // Add the status property
   },
   {
     name: "Perm Spoofer",
@@ -26,7 +26,8 @@ const productDetails = [
     heading: "Perm Spoofer",
     link: "",
     des:
-      "Argon Perm Spoofer is a cost-effective, high-performance HWID spoofer renowned for its effectiveness in bypassing anti-cheat systems such as EAC, BE, VGK, FiveM, and CoD. It's a top choice for gamers seeking an affordable and reliable solution to avoid HWID bans and enjoy their favorite games."
+      "Argon Perm Spoofer is a cost-effective, high-performance HWID spoofer renowned for its effectiveness in bypassing anti-cheat systems such as EAC, BE, VGK, FiveM, and CoD. It's a top choice for gamers seeking an affordable and reliable solution to avoid HWID bans and enjoy their favorite games.",
+    status: "In Stock"
   },
 ];
 
@@ -77,32 +78,32 @@ function Wishlist() {
 
 //Ui components {
   function Product(product = {}) {
-    let { name, price, imageUrl, heading, des, link } = product;
+    let { name, price, imageUrl, heading, des, link, status } = product;
     return `
-  <div class='card'>
-    <div class='top-bar'>
-      <i class='fab fa-apple'></i>
-      <em class="stocks">In Stock</em>
-    </div>
-    <div class='img-container'>
-      <img class='product-img' src='${imageUrl}' alt='' />
-      <div class='out-of-stock-cover'><span>Out Of Stock</span></div>
-    </div>
-    <div class='details'>
-      <div class='name-fav'>
-        <strong class='product-name'>${name}</strong>
-        <button onclick='addToWishlist(this)' class='heart'><i class='fas fa-heart'></i></button>
-      </div>
-      <div class='wrapper'>
-        <h5>${heading}</h5>
-        <p>${des}</p>
-      </div>
-      <div class='purchase'>
-        <p class='product-price'>€ ${price}</p>
-        <span class='btn-add'>${AddBtn({ name, imageUrl })}</span>
-        </div>;
-    </div>
-  </div>`;
+      <div class='card'>
+        <div class='top-bar'>
+          <i class='fab fa-apple'></i>
+          <em class="stocks">${status === 'In Development' ? 'In Development' : 'In Stock'}</em>
+        </div>
+        <div class='img-container'>
+          <img class='product-img' src='${imageUrl}' alt='' />
+          <div class='out-of-stock-cover' style="${status === 'In Development' ? 'display: flex;' : 'display: none;'}"><span>${status}</span></div>
+        </div>
+        <div class='details'>
+          <div class='name-fav'>
+            <strong class='product-name'>${name}</strong>
+            <button onclick='addToWishlist(this)' class='heart'><i class='fas fa-heart'></i></button>
+          </div>
+          <div class='wrapper'>
+            <h5>${heading}</h5>
+            <p>${des}</p>
+          </div>
+          <div class='purchase'>
+            <p class='product-price'>€ ${price}</p>
+            <span class='btn-add'>${AddBtn({ name, imageUrl })}</span>
+          </div>
+        </div>
+      </div>`;
   }
   
   function AddBtn(product) {
@@ -498,8 +499,13 @@ function OutOfStock(product, handler) {
           "flex";
         stocks.style.display = "none";
       } else {
-        stocks.innerText = "Only Few Left";
-        stocks.style.color = "orange";
+        if (product.status === 'In Development') {
+          stocks.innerText = 'In Development';
+          stocks.style.color = 'red';
+        } else {
+          stocks.innerText = "Only Few Left";
+          stocks.style.color = "orange";
+        }
       }
     }
   }

@@ -15,12 +15,20 @@ function sendEmail() {
       console.log("Email sent successfully:", response);
       document.getElementById("status").innerHTML = "Message Sent";
       document.getElementById("status").style.color = "green";
+      
+      // Clear form fields after successful email sending
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("discord").value = "";
+      document.getElementById("order").value = "";
+      document.getElementById("message").value = "";
     }, function(error) {
       console.log("Error sending email:", error);
       document.getElementById("status").innerHTML = "Oops! Something went wrong. Please try again later.";
       document.getElementById("status").style.color = "red";
     });
 }
+
 
 function toggleAnswer(index) {
   const answer = document.getElementById(`answer${index}`);
