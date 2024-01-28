@@ -85,7 +85,7 @@ nav.fixed {
   align-items: center;
   height: 89px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.285);
+  background-color: rgba(255, 255, 255, 0.098);
   backdrop-filter: blur(15px);
   z-index: 999;
 }

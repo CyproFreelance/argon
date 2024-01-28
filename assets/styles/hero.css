@@ -26,14 +26,15 @@
   letter-spacing: 0.5px;
   font-weight: 900;
   line-height: 0.9;
-  margin-bottom: 50px;
+  margin-bottom: 1.6rem;
 }
 
 .heroleft > p {
+  color: #ffffffbf;
   width: 85%;
-  font-size: 18px;
+  font-size: 19px;
   font-family: 'Poppins', sans-serif;
-  line-height: 1.4;
+  line-height: 1.2;
   text-align: start;
 }
 

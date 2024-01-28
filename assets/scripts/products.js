@@ -127,7 +127,6 @@ function Wishlist() {
         ${productName === 'Fortnite Public' ? `<button data-duration="1-month" onclick="selectDuration('Fortnite Public', '1-month');" class="modal-button">1 Month</button>` : ''}
         ${productName === 'Fortnite Public' ? `<button data-duration="lifetime" onclick="selectDuration('Fortnite Public', 'lifetime');" class="modal-button">Lifetime</button>` : ''}
         ${productName === 'Perm Spoofer' ? `<button data-duration="one-day" onclick="selectDuration('Perm Spoofer', 'one-day');" class="modal-button">1 Day</button>` : ''}
-        ${productName === 'Perm Spoofer' ? `<button data-duration="one-week" onclick="selectDuration('Perm Spoofer', 'one-week');" class="modal-button">1 Week</button>` : ''}
         ${productName === 'Perm Spoofer' ? `<button data-duration="lifetime" onclick="selectDuration('Perm Spoofer', 'lifetime');" class="modal-button">Lifetime</button>` : ''}
         
         </div>
@@ -205,9 +204,9 @@ function generateProductLink(productName, duration) {
       'lifetime': '65918bd89eed0'
     },
     'Perm Spoofer': {
-      'one-day': 'temp-perm-spoofer-1-day',
+      'one-day': '65918ea95d047',
       'one-week': 'temp-perm-spoofer-week',
-      'lifetime': 'temp-perm-spoofer-lifetime'
+      'lifetime': '659527c38ef71'
     }
   };
 
