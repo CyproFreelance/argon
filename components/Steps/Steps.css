@@ -1,0 +1,96 @@
+.steps {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 100%;
+}
+
+.sectionHeading h1 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 771px) {
+  .sectionHeading h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 466px) {
+  .sectionHeading h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.sectionHeading p {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 4px;
+}
+
+.steps p {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 4px;
+}
+
+.stepno {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.card-text {
+  color: #ebe9e9;
+  opacity: 62%;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.card-row-steps {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.card-row-steps:nth-child(2) {
+  margin-top: 50px;
+}
+
+.card-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 250px;
+  height: 300px;
+  border: 2px solid white;
+  padding: 20px;
+  /* background: linear-gradient(180deg, #180427 18.4%, #4e2a6a 100%); */
+
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 764px) {
+  .card-row-steps {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .steps {
+    margin-top: 120px;
+  }
+}

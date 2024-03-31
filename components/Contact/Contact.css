@@ -1,0 +1,113 @@
+.contact {
+  margin-top: 200px;
+}
+
+.less_contact {
+  color: #ebe9e9;
+  font-size: 1.2rem;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.contactWrapper {
+  background-position: center;
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 550px;
+  margin: auto;
+}
+
+form input {
+  height: 55px;
+  padding: 20px;
+  color: white;
+  background: rgba(30, 6, 49, 0.6);
+  border: 2px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #7612c4, #fc7070);
+  border-image-slice: 1;
+  border-radius: 10px;
+  background: linear-gradient(#0d0d0d, #0d0d0d) padding-box, linear-gradient(90deg, #7612c4, #fc7070) border-box;
+}
+
+.form input::after {
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: -4px; right: -4px;
+    background: linear-gradient(to right, #7612c4, #fc7070);
+    content: '';
+    z-index: -1;
+    border-radius: 16px;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form textarea {
+  padding: 20px;
+  color: white;
+  background: rgba(30, 6, 49, 0.6);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #7612c4, #fc7070);
+  border-image-slice: 1;
+  border-radius: 20px;
+  border-radius: 10px;
+  background: linear-gradient(#0d0d0d, #0d0d0d) padding-box, linear-gradient(90deg, #7612c4, #fc7070) border-box;
+}
+
+form textarea:focus {
+  outline: none;
+}
+
+form button {
+  background-color: #5a10bf;
+  width: 130px;
+  color: white;
+  height: 49px;
+  margin: auto;
+  border-radius: 13px;
+  transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) all;
+}
+
+.submit:hover {
+  opacity: 0.7;
+}
+
+form button:hover {
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 620px) {
+  form {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 457px) {
+  form {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  form {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .contact {
+    margin-top: 120px;
+  }
+}

@@ -1,0 +1,143 @@
+.footer {
+  border-top: 0.1px solid white;
+  background-color: #000;
+  color: #fff;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 6rem;
+}
+
+.company-header {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.company-paragraph {
+  font-size: 1em;
+  color: #ffffffb2;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-icons img {
+  width: 1.8em;
+  transition: all 0.5s ease;
+}
+
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.column,
+.footer-right-column {
+  max-width: 200px;
+}
+
+.column-header {
+  color: #c812e8;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footitem {
+  line-height: 1.8;
+  margin: 0;
+  /* text-align: center; */
+  font-size: 0.9em;
+  list-style-position: inside;
+  transition: all 0.5s ease;
+}
+
+.footitem:hover {
+  color: #800080;
+  cursor: pointer;
+}
+
+.copyright {
+  font-size: 0.8em;
+  margin-top: 5vh;
+  color: #ffffffb2;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: #e23eff;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.footer a:hover {
+  color: #e800e8;
+}
+
+.copyrightmobile {
+  display: none;
+  font-size: 0.8em;
+  margin-top: 5vh;
+  color: #ffffffb2;
+}
+
+.copyrightmobile a {
+  text-decoration: none;
+  color: #e23eff;
+}
+
+@media only screen and (max-width: 1000px) {
+  .copyright {
+    display: none;
+  }
+
+  .copyrightmobile {
+    display: block;
+  }
+
+  .footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerleft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-center,
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-center {
+    margin-top: 2em;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1051px) {
+}

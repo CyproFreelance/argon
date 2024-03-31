@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: silver;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+:root {
+  --bg-main: #000000;
+  --heading-gradient: linear-gradient(#7612c4, #fc7070);
+  --light-white: #ebe9e9;
+
+  /*
+    ! for texts also add 
+    ? -webkit-text-fill-color: transparent;
+    ? -webkit-background-clip: text;
+  */
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+}
+
+.wrapper {
+  background-image: url("https://argon-one.vercel.app/bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  max-height: 820px;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #7612c4 0%, #fc7070 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 979px) {
+}

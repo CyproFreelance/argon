@@ -1,0 +1,60 @@
+.praise {
+  margin-top: 270px;
+  width: 85%;
+}
+
+.praiseHeading h1 {
+  width: 85%;
+  margin: auto;
+  font-size: 2rem;
+}
+
+.praise p {
+  margin-top: 20px;
+  color: #ebe9e9;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.praiseButtons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.get-started-praise {
+  width: 130px;
+  height: 50px;
+
+  background: linear-gradient(
+    180deg,
+    #560495 19.5%,
+    #6f4b8b 99.69%,
+    #9929f0 100%
+  );
+  border-radius: 13px;
+  color: white;
+}
+
+.shop-now-praise {
+  color: white;
+  width: 130px;
+  height: 50px;
+
+  background: linear-gradient(180deg, #9929f0 0%, #6f4b8b 0.31%, #560495 80.5%);
+  border-radius: 13px;
+}
+
+@media only screen and (max-width: 550px) {
+  .praiseHeading h1 {
+    font-size: 1.4rem;
+  }
+  .praise p {
+    font-size: 1rem;
+  }
+  .praise {
+    width: 100%;
+  }
+}

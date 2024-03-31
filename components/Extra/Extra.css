@@ -1,0 +1,40 @@
+.extra {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  text-align: center;
+  max-width: 1355px;
+}
+
+.extraHeader {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.subextra {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  color: #ffffffac;
+}
+
+.shopbtn {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #5a10bf;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 675px) {
+  .extraHeader {
+    font-size: 2em;
+  }
+  .subextra {
+    font-size: 1em;
+  }
+}

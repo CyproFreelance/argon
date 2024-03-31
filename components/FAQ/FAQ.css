@@ -1,0 +1,177 @@
+.faq {
+  margin-top: 200px;
+  width: 85%;
+}
+
+.plus img {
+  width: 40px;
+  height: 42px;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+
+.plus {
+  transition: 0.8s all ease;
+}
+
+.fluids {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question {
+  color: #800080;
+  font-size: 1.3rem;
+}
+
+.less {
+  color: #ebe9e9;
+  font-weight: normal;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 67%;
+  /* background-color: red; */
+  width: 610px;
+  margin: auto;
+}
+
+.fluid-left {
+  justify-content: space-between;
+  display: flex;
+  margin: auto;
+  gap: 100px;
+  align-items: center;
+  border: 2px solid #7612c4;
+  border-radius: 7px;
+  font-weight: bold;
+  width: fit-content;
+  width: 670px;
+  padding: 10px 20px;
+}
+
+.answer {
+  margin-top: 20px;
+  color: silver;
+  width: 420px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 764px) {
+  .fluid-left {
+    width: 600px;
+    gap: 40px;
+  }
+}
+
+@media only screen and (max-width: 678px) {
+  .fluid-left {
+    width: 500px;
+    gap: 10px;
+  }
+  .question {
+    font-size: 1.1rem;
+  }
+  .answer {
+    font-size: 0.8rem;
+  }
+  .qna {
+    width: 70%;
+  }
+  .answer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .fluid-left {
+    width: 400px;
+    gap: 10px;
+  }
+  .question {
+    font-size: 1.1rem;
+  }
+  .answer {
+    font-size: 0.8rem;
+  }
+  .qna {
+    width: 70%;
+  }
+  .answer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 457px) {
+  .fluid-left {
+    width: 350px;
+    gap: 10px;
+  }
+  .question {
+    font-size: 1rem;
+  }
+  .answer {
+    font-size: 0.7rem;
+  }
+  .qna {
+    width: 70%;
+  }
+  .answer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .fluid-left {
+    width: 300px;
+    gap: 10px;
+  }
+  .question {
+    font-size: 1rem;
+  }
+  .answer {
+    font-size: 0.7rem;
+  }
+  .qna {
+    width: 80%;
+  }
+  .answer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 771px) {
+  .less {
+    width: 500px;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .less {
+    width: 400px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 466px) {
+  .less {
+    width: 95%;
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .faq {
+    margin-top: 100px;
+  }
+}

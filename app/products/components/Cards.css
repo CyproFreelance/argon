@@ -1,0 +1,107 @@
+.buy-card {
+  background-color: #5a10bf;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  width: fit-content;
+  margin-bottom: 20px;
+  transition: 0.7s all cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.buy-card:hover {
+  background-color: white;
+  color: #5a10bf;
+}
+
+.cards {
+  width: 100%;
+  margin-top: 90px;
+  gap: 60px;
+  text-align: center;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #180427 18.4%, #401362 100%);
+  border: 2px solid silver;
+  border-radius: 13px;
+  width: 450px;
+  /* margin: auto; */
+}
+
+.product-image img {
+  width: 260px;
+  height: 380px;
+}
+
+.card-texts {
+  margin-top: 10px;
+}
+
+.card-texts h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.card-texts p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ebe9e9;
+}
+
+.card-detail {
+  margin-top: 20px;
+}
+
+.card-detail p {
+  color: #ebe9e9;
+  opacity: 90%;
+}
+
+.card-buy {
+  margin-top: 50px;
+}
+
+.price {
+  font-size: 1.7rem;
+  color: white;
+}
+
+.product-availability {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 998px) {
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 785px) {
+  .cards {
+    margin-top: 120px;
+  }
+}
+
+@media only screen and (max-width: 467px) {
+  .card {
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 388px) {
+  .card {
+    width: 340px;
+  }
+}
