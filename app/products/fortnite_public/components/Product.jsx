@@ -98,7 +98,7 @@ const Product = () => {
               Lifetime
             </button>
           </div>
-          <div className="final-btn-container flex gap-6">
+          <div className="final-btn-container flex gap-6 items-center">
             <button
               className={`proceed continue flex items-center gap-1 ${
                 processState === true ? "show" : "disabled"
@@ -108,6 +108,34 @@ const Product = () => {
             >
               Continue with payment{" "}
             </button>
+            <div
+              className={`font-semibold ${
+                buttonStates[0] === 1 ? "show" : "product__price"
+              }`}
+            >
+              $ 6.99
+            </div>
+            <div
+              className={`font-semibold ${
+                buttonStates[1] === 1 ? "show" : "product__price"
+              }`}
+            >
+              $ 19.99
+            </div>
+            <div
+              className={`font-semibold ${
+                buttonStates[2] === 1 ? "show" : "product__price"
+              }`}
+            >
+              $ 34.99
+            </div>
+            <div
+              className={`font-semibold ${
+                buttonStates[3] === 1 ? "show" : "product__price"
+              }`}
+            >
+              $ 119.99
+            </div>
           </div>
         </div>
       </div>

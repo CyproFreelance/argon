@@ -34,16 +34,16 @@ export default function Navbar() {
               className={`list flex items-center ${isOpen ? "list-resp" : ""}`}
             >
               <li>
-                <a href="https://argon-one.vercel.app/">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="https://argon-one.vercel.app/products">Products</a>
+                <a href="/products">Products</a>
               </li>
               <li>
-                <a href="https://argon-one.vercel.app/#feature">Features</a>
+                <a href="/#feature">Features</a>
               </li>
               <li>
-                <a href="https://argon-one.vercel.app/#contact">Contact</a>
+                <a href="/#contact">Contact</a>
               </li>
               <button className="get-started btn-h" onClick={handleClickNavbar}>
                 Get Started

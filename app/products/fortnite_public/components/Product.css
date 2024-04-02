@@ -140,3 +140,11 @@
     width: 100%;
   }
 }
+
+.product__price {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

@@ -39,7 +39,7 @@ const Hero = () => {
             <button
               className="discord"
               onClick={() => {
-                window.open("https://discord.gg/6QhdZVXKe");
+                window.open("https://discord.gg/argons");
               }}
             >
               Discord
